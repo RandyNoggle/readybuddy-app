@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-3">Emergency Kit Checklist</h2>
+<p class="mb-4">Use this checklist to assemble your emergency kit. For convenience, each item includes a link to a recommended product (affiliate link) — but feel free to procure items from any source.</p>
+
+<ul class="list-group mb-4">
+    {% for item in items %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ item.name }}
+        <a href="{{ item.affiliate_url }}" target="_blank" class="btn btn-outline-primary btn-sm">Shop</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="/modules" class="btn btn-secondary">Back to Modules</a>
+{% endblock %}

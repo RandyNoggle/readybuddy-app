@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-3">{{ module.title }} – Quiz Results</h2>
+{% if correct %}
+<div class="alert alert-success" role="alert">
+    <strong>Correct!</strong> Great job – you selected the right answer.
+</div>
+{% else %}
+<div class="alert alert-danger" role="alert">
+    <strong>Not quite.</strong> The correct answer is "{{ module.question.answer }}". Keep learning!
+</div>
+{% endif %}
+
+<a href="/modules" class="btn btn-primary me-2">Back to Modules</a>
+<a href="/modules/{{ module.id }}" class="btn btn-secondary">Retake Module</a>
+{% endblock %}

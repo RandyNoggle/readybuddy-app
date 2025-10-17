@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-3">Volunteer &amp; Community Resources</h2>
+<p class="mb-4">Below are trusted programs and organizations that can help you contribute to community preparedness and disaster response. Each description is drawn from official sources to ensure accuracy.</p>
+<div class="row">
+    {% for resource in resources %}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ resource.name }}</h5>
+                <p class="card-text flex-grow-1">{{ resource.description }}</p>
+                <a href="{{ resource.url }}" class="btn btn-outline-primary mt-auto" target="_blank">Visit Website</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<a href="/modules" class="btn btn-secondary mt-3">Back to Modules</a>
+{% endblock %}
