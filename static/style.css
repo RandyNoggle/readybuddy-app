@@ -1,4 +1,120 @@
-/* 👇 Big, obvious changes so you can SEE it working */
-body { background: #f2f5f9; font-size: 18px; }
-h1 { color: #0b5cab; }
-button { font-weight: 600; border: 1px solid #0b5cab; border-radius: 6px; }
+/* --- Global look & feel (obvious changes) --- */
+:root {
+  --brand: #0b5cab;
+  --bg: #f2f5f9;
+  --text: #111;
+  --muted: #666;
+  --card: #fff;
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Header / Navbar --- */
+.header {
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--brand);
+  text-decoration: none;
+}
+.brand img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+.nav a:hover { border-color: var(--brand); }
+
+/* --- Page container / card --- */
+.page {
+  max-width: 960px;
+  margin: 1.25rem auto 2.5rem;
+  padding: 0 1rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.5rem;
+}
+
+/* --- Typography --- */
+h1, h2 {
+  margin: 0 0 0.75rem;
+  color: var(--brand);
+}
+.muted { color: var(--muted); }
+
+/* --- Links, lists, images --- */
+a { text-decoration: none; color: var(--brand); }
+a:hover { text-decoration: underline; }
+ul { padding-left: 1.25rem; }
+img { display: block; max-width: 100%; height: auto; margin: 0.5rem 0; }
+
+/* --- Form + buttons --- */
+input, select, button {
+  font: inherit;
+}
+input, select {
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: min(420px, 100%);
+}
+label { display: block; margin: 0.5rem 0; }
+button {
+  margin-top: 0.5rem;
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+  background: var(--brand);
+  color: #fff;
+  border: 1px solid var(--brand);
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:hover { opacity: 0.92; }
+
+/* --- Helpers --- */
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
