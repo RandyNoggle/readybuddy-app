@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ReadyBuddy – Modules</title>
+</head>
+<body>
+  <h1>Micro-learning Modules</h1>
+  <ul>
+    {% for m in modules %}
+      <li>
+        <a href="/modules/{{ m.id }}">{{ m.title }}</a><br>
+        <small>{{ m.description }}</small>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p>
+    <a href="/checklist">Emergency Kit Checklist</a> ·
+    <a href="/resources">Volunteer Resources</a>
+  </p>
+</body>
+</html>
