@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   <title>ReadyBuddy – Modules</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <h1>Micro-learning Modules</h1>
   <ul>
     {% for m in modules %}
-      <li>
-        <a href="/modules/{{ m.id }}">{{ m.title }}</a><br>
-        <small>{{ m.description }}</small>
+      <li style="margin-bottom: 1rem;">
+        <a href="/modules/{{ m.id }}"><strong>{{ m.title }}</strong></a><br>
+        <small class="muted">{{ m.description }}</small>
+        {% if m.image %}
+          <img src="/static/{{ m.image }}" alt="" style="max-width: 320px;">
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
