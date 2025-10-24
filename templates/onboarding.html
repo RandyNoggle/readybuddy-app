@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ReadyBuddy – Onboarding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <h1>Welcome to ReadyBuddy</h1>
+  <p>Quick setup to tailor your experience.</p>
+  <form method="get" action="/onboarding">
+    <label>Household size
+      <input type="number" name="family_size" value="2" min="1" required>
+    </label><br>
+    <label>Location
+      <input type="text" name="location" placeholder="Coos Bay, OR" required>
+    </label><br>
+    <label>Experience
+      <select name="skill_level" required>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+    </label><br><br>
+    <button type="submit">Continue</button>
+  </form>
+</body>
+</html>
