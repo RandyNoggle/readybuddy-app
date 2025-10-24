@@ -3,20 +3,28 @@
 <head>
   <meta charset="utf-8">
   <title>Emergency Kit Checklist – ReadyBuddy</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <!-- Version tag ensures the browser reloads the latest styles -->
+  <link rel="stylesheet" href="/static/style.css?v=2">
 </head>
 <body>
-  <p><a href="/modules">← Back to modules</a></p>
+  <div class="card">
+    <p><a href="/modules">← Back to modules</a></p>
 
-  <h1>Emergency Kit Checklist</h1>
-  <ul>
-    {% for item in items %}
-      <li>
-        <label><input type="checkbox"> {{ item.name }}</label>
-        &nbsp;—&nbsp;
-        <a href="{{ item.affiliate_url }}" target="_blank" rel="noopener">View</a>
-      </li>
-    {% endfor %}
-  </ul>
+    <h1>Emergency Kit Checklist</h1>
+    <p class="muted">Use this checklist to build or review your home emergency kit.</p>
+
+    <ul>
+      {% for item in items %}
+        <li style="margin-bottom: 0.75rem;">
+          <label><input type="checkbox"> {{ item.name }}</label>
+          &nbsp;—&nbsp;
+          <a href="{{ item.affiliate_url }}" target="_blank" rel="noopener">View</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <hr>
+    <p><a href="/modules">🏠 Back to modules</a></p>
+  </div>
 </body>
 </html>
