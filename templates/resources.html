@@ -3,21 +3,31 @@
 <head>
   <meta charset="utf-8">
   <title>Volunteer Resources – ReadyBuddy</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <!-- Version tag ensures new CSS always loads -->
+  <link rel="stylesheet" href="/static/style.css?v=2">
 </head>
 <body>
-  <p><a href="/modules">← Back to modules</a></p>
+  <div class="card">
+    <p><a href="/modules">← Back to modules</a></p>
 
-  <h1>Volunteer Programs & Resources</h1>
-  <ul>
-    {% for r in resources %}
-      <li>
-        <strong>
-          <a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.name }}</a>
-        </strong><br>
-        <small>{{ r.description }}</small>
-      </li>
-    {% endfor %}
-  </ul>
+    <h1>Volunteer Programs & Resources</h1>
+    <p class="muted">
+      Explore ways to get involved in community preparedness, emergency response, and volunteer networks.
+    </p>
+
+    <ul>
+      {% for r in resources %}
+        <li style="margin-bottom: 1.25rem;">
+          <strong>
+            <a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.name }}</a>
+          </strong><br>
+          <small>{{ r.description }}</small>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <hr>
+    <p><a href="/modules">🏠 Back to modules</a></p>
+  </div>
 </body>
 </html>
