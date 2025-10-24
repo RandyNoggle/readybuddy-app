@@ -1,45 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
   <title>ReadyBuddy – Onboarding</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <header>
-    <h1>Welcome to ReadyBuddy</h1>
-    <nav>
-      <a href="/">Home</a> |
-      <a href="/modules">Modules</a> |
-      <a href="/checklist">Checklist</a> |
-      <a href="/resources">Resources</a>
-    </nav>
-  </header>
-
-  <main>
-    <h2>Quick Onboarding</h2>
-    <form method="post" action="/onboarding">
-      <label>Household size
-        <input type="number" name="household_size" min="1" value="2" required>
-      </label>
-      <br>
-      <label>Location
-        <input type="text" name="location" placeholder="e.g., Seattle, WA" required>
-      </label>
-      <br>
-      <label>Experience level
-        <select name="experience">
-          <option>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
-        </select>
-      </label>
-      <br><br>
-      <button type="submit">Get Started</button>
-    </form>
-
-    <p>Or jump straight to <a href="/modules">Modules</a>.</p>
-  </main>
+  <h1>Welcome to ReadyBuddy</h1>
+  <p>Quick setup to tailor your experience.</p>
+  <form method="post" action="/onboarding">
+    <label>Household size <input type="number" name="household_size" value="2" min="1" required></label><br>
+    <label>Location <input type="text" name="location" placeholder="Seattle, WA" required></label><br>
+    <label>Experience
+      <select name="experience">
+        <option>Beginner</option><option>Intermediate</option><option>Advanced</option>
+      </select>
+    </label><br><br>
+    <button type="submit">Get Started</button>
+  </form>
+  <p>Or go to <a href="/modules">Modules</a>.</p>
 </body>
 </html>
