@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Emergency Kit Checklist – ReadyBuddy</title>
+</head>
+<body>
+  <p><a href="/modules">← Back to modules</a></p>
+
+  <h1>Emergency Kit Checklist</h1>
+  <ul>
+    {% for item in items %}
+      <li>
+        <label><input type="checkbox"> {{ item.name }}</label>
+        &nbsp;—&nbsp;
+        <a href="{{ item.affiliate_url }}" target="_blank" rel="noopener">View</a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
