@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Quiz Result – ReadyBuddy</title>
+</head>
+<body>
+  <p><a href="/modules/{{ module.id }}">← Back to module</a></p>
+
+  <h1>Result</h1>
+  <p>You chose: <strong>{{ selected }}</strong></p>
+
+  {% if correct %}
+    <p style="color:green;">✅ Correct! Well done.</p>
+  {% else %}
+    <p style="color:red;">❌ Not quite. The correct answer is <strong>{{ module.question.answer }}</strong>.</p>
+  {% endif %}
+
+  <p><a href="/modules">See more modules</a></p>
+</body>
+</html>
