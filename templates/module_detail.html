@@ -3,32 +3,37 @@
 <head>
   <meta charset="utf-8">
   <title>{{ module.title }} – ReadyBuddy</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <!-- Version tag added to ensure new CSS always loads -->
+  <link rel="stylesheet" href="/static/style.css?v=2">
 </head>
 <body>
-  <p><a href="/modules">← Back to all modules</a></p>
+  <div class="card">
+    <p><a href="/modules">← Back to all modules</a></p>
 
-  <h1>{{ module.title }}</h1>
-  <p>{{ module.content }}</p>
+    <h1>{{ module.title }}</h1>
+    <p>{{ module.content }}</p>
 
-  {% if module.image %}
-    <img src="/static/{{ module.image }}" alt="" style="max-width:100%;height:auto;">
-  {% endif %}
-  {% if module.video_link %}
-    <p><a href="{{ module.video_link }}" target="_blank" rel="noopener">Related video</a></p>
-  {% endif %}
+    {% if module.image %}
+      <img src="/static/{{ module.image }}" alt="{{ module.title }}">
+    {% endif %}
 
-  <h2>Quick Quiz</h2>
-  <form method="get" action="/modules/{{ module.id }}/quiz">
-    <p>{{ module.question.text }}</p>
-    {% for opt in module.question.options %}
-      <label>
-        <input type="radio" name="selected_option" value="{{ opt }}" required>
-        {{ opt }}
-      </label><br>
-    {% endfor %}
-    <br>
-    <button type="submit">Check Answer</button>
-  </form>
+    {% if module.video_link %}
+      <p><a href="{{ module.video_link }}" target="_blank" rel="noopener">🎥 Watch related video</a></p>
+    {% endif %}
+
+    <hr>
+    <h2>Quick Quiz</h2>
+    <form method="get" action="/modules/{{ module.id }}/quiz">
+      <p>{{ module.question.text }}</p>
+      {% for opt in module.question.options %}
+        <label>
+          <input type="radio" name="selected_option" value="{{ opt }}" required>
+          {{ opt }}
+        </label><br>
+      {% endfor %}
+      <br>
+      <button type="submit">Check Answer</button>
+    </form>
+  </div>
 </body>
 </html>
